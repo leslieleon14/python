@@ -1,0 +1,9 @@
+#get class average
+
+import myFunctions
+
+listNums = myFunctions.getListNums()
+print(listNums)
+
+print("Sum of numbers: ",
+          myFunctions.sumNumbers(listNums))
