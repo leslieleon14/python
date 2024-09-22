@@ -1,0 +1,18 @@
+****python code showcasing when user enters a number
+as their age, they will receive a phrase for their 
+age range.****
+
+
+while True:
+    try:
+        age = int(input("Age? "))
+        if age < 1 or age > 120: #invalid
+                raise ValueError()
+        if age>= 25:
+            print("Grown and sexy")
+        else:
+            print("Still green")
+        break
+    except ValueError:
+        print("Invalid number....try again!")
+    
