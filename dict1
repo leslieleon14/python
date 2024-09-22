@@ -1,0 +1,16 @@
+#dictionaries?
+# key: value pair
+
+dictScores = {"bob": 67, "tim": 88, "mike" :99}
+#keys must be unique
+
+print(dictScores["bob"]) #key unlocks value
+dictScores.update({"kim" : 77}) #add key value pairs
+dictScores["bob"] = 100 #update a value
+print(dictScores)
+#print(dictScores) ["lloyd"] #error key does not exist
+print(dictScores.get("tim"))
+print(dictScores.get("lloyd")) #missing key = none
+print("length: ", len(dictScores)) #num key/value pairs
+print("Keys: ", dictScores.keys())
+print("Values: ", dictScores.values())
