@@ -1,0 +1,55 @@
+class Student:
+    """This represents a student at JCCC"""
+
+     #Initializer(is how your object gets created)
+    def __init__(self, name, major):
+        # go look you up in DB and assign to attr
+        self.name = name
+        self.major = major
+        self.currCredits = 0 # this semester
+        self.totalCredits = 0 # towards grad
+
+    #methods (behaviors)
+    #getters
+    def getName(self): return self.name
+    def getMajor(self): return self.major
+
+    #setter (save to DB)
+    def setName(self, newName):
+        self.name = newName
+    def setMajor(self, newMajor):
+        self.major = newMajor
+
+    #mutators ( changes an attr)
+    def addCredits(self, newCredits):
+        self.currCredits += newCredits
+        # save to the DB
+
+    def resetCredits(self):
+        self.totalCredits += self.currCredits
+        self.currCredits = 0
+
+    #special
+    def __str__(self):
+        info = "Name: " + self.name + "\n"
+        info += "Major: " + self.major + "\n"
+        info += "Current Credits: " + str(self.currCredits) + "\n"
+        info += "Total Credits: " + str(self.totalCredits) + "\n"
+        return info
+
+#inheritance (GradStudent inherits all of Students attr/methods
+class GradStudent(Student):
+    #initializer
+    def __init__(self, name, major, stipend):
+        Student.__init__(self, name, major)
+        self.stipend = stipend #grad attr only
+        
+    #methods
+    def getStipend(self): return self.stipend
+    def setStipend(self, newStipend): self.stipend = newStipend
+
+    #special
+    def __str__(self):
+        info = Student.__str__(self)
+        info += "Stipend " + str(self.stipend) + "\n"
+        return info
